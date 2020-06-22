@@ -1,0 +1,24 @@
+<h1>New Album</h1>
+
+<%= form_with model: @album do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year, 'Year' %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist, 'Artist' %>
+    <%= form.text_field :artist %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Album" %>
+  </div>
+<% end %>
+
+<%= link_to 'Go Back', albums_path %>

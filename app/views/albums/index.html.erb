@@ -1,0 +1,39 @@
+
+<h1>Albums</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Album</th>
+    <th>Year</th>
+    <th>Artist</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <div class="container">
+    <tbody>
+      <div class="row">
+        <% @albums.each do |album| %>
+          <tr>
+            <td><%= album.name %></td>
+            <td><%= album.year %></td>
+            <td><%= album.artist %></td>
+            <td><button class="btn btn-light btn-sm"><%= link_to 'Details', album_path(album) %></button></td>
+            <td><button class="btn btn-light btn-sm"><%= link_to 'Edit', edit_album_path(album) %></button></td>
+            <td><button class="btn btn-light btn-sm"><%= link_to 'Delete', album_path(album), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+            <td><button id ="click" class="btn btn-success btn-sm"><h1 class="fa fa-check fa-sm"></h1></button></td>
+            <td><button id ="click" class="btn btn-danger btn-sm"><h1 class="fa fa-times fa-sm"></h1></button></td>
+            <td><button id ="click" class="btn btn-dark btn-sm"><h1 class="fa fa-flag fa-sm"></h1></button></td>
+          </tr>
+      </div>
+    </tbody>
+  </div>
+  <% end %>
+
+</table>
+
+<br>
+
+<%= link_to 'New Album', new_album_path %>
+<%= link_to 'Homepage', root_path %>

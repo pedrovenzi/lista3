@@ -1,0 +1,24 @@
+<h1>Edit Song</h1>
+
+<%= form_with model: @song do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre_id , 'Genre' %>
+    <%= form.select :genre_id , options_for_select(@genres.map { |genre| [genre.name, genre.id]}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :explicit, 'Explicit' %>
+    <%= form.check_box :explicit %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Confirm Changes" %>
+  </div>
+<% end %>
+
+<%= link_to 'Go Back', songs_path %>

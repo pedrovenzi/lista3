@@ -1,0 +1,28 @@
+<h1>Song: <%= @song.name %></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Genre</th>
+    <th>Explicit</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.genre.name %></td>
+      <td><%= song.explicit %></td>
+      <td><%= link_to 'Go Back', songs_path %></td>
+      <td><%= link_to 'Edit', edit_song_path(song) %></td>
+      <td><%= link_to 'Delete', song_path(song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song', new_song_path(album_id: @album)%>
+<%= link_to 'Homepage', root_path %>
