@@ -2,3 +2,14 @@
 
 <%= link_to 'Albums', albums_path %>
 <%= link_to 'Songs', songs_path %>
+
+
+<script>
+  const feriado_url = https://api.calendario.com.br/?json=true&ano=2017&ibge=3550308&token=cHZlbnppLnB2QGdtYWlsLmNvbSZoYXNoPTE3ODQzNjc1OQ
+  async function getFeriado() {
+      const resposta = await fetch(feriado_url);
+      const dados = await response.json();
+  }
+</script>
+
+<div id="calendar"></div>

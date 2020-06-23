@@ -32,6 +32,14 @@ gem 'font-awesome-rails'
 
 gem 'jquery-rails'
 
+gem 'fullcalendar-rails'
+
+gem 'momentjs-rails'
+
+gem 'chartjs-ror'
+
+gem 'jquery_mask_rails', '~> 0.1.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
